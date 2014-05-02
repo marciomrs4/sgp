@@ -104,7 +104,7 @@
 		</div>
 
 
-			<?php include_once 'forms/formDefault.php'; ?>
+			<?php include_once 'forms/cadastrar/doca.php'; ?>
 
 		<footer>
 			<nav class="navbar navbar-default navbar-fixed-bottom"
