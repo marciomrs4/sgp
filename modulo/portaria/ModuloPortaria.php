@@ -12,28 +12,18 @@
 					
 					<li class="dropdown">
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary">
+							<a href="?action=Cadastrar/Novo" type="button" class="btn btn-primary">
 								<span class="glyphicon glyphicon-plus"></span> Novo
-							</button>
-							<button type="button" class="btn btn-primary dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span> <span class="sr-only">Toggle
-									Dropdown</span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="?action=Cadastrar/Portaria">
-										<span class="glyphicon glyphicon-list-alt"></span>
-										Portaria
-									</a>
-								</li>
-							</ul>
+							</a>
 						</div>
 					</li>
 					
-					<li>
-						<button type="submit" class="btn btn-primary pull-right">
+					<li class="dropdown">
+						<div class="btn-group">
+						<a href="teste.php" class="btn btn-primary pull-right">
 							<span class="glyphicon glyphicon-search"></span> Pesquisar
-						</button>
+						</a>
+						</div>
 					</li>
 
 					<li class="dropdown">

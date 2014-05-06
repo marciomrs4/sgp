@@ -26,7 +26,7 @@
 										</span>
 										Novo
 									</a>
-										</li>
+								</li>
 							</ul>
 						</div>
 					</li>
