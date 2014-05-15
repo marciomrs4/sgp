@@ -18,7 +18,7 @@
 						<span class="glyphicon glyphicon-arrow-down"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="../portaria/portaria.php"><span class="glyphicon glyphicon-sort"></span> Portaria</a></li>
+						<li><a href="../portaria/"><span class="glyphicon glyphicon-sort"></span> Portaria</a></li>
 						<li><a href="../administracao/"><span class="glyphicon glyphicon-flash"></span> Administração</a></li>
 						<li class="divider"></li>
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span> Alterar Senha</a></li>

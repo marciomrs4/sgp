@@ -20,7 +20,7 @@
 					
 					<li class="dropdown">
 						<div class="btn-group">
-						<a href="teste.php" class="btn btn-primary pull-right">
+						<a href="Pesquisar.php" class="btn btn-primary pull-right">
 							<span class="glyphicon glyphicon-search"></span> Pesquisar
 						</a>
 						</div>
