@@ -6,14 +6,14 @@
 		<form class="form-horizontal" method="post" action="" role="form">
 			
 			<div class="form-group">
-				<label for="inputDepartamento" class="col-sm-2 control-label">Departamento:</label>
+				<label for="inputDepartamento" class="col-sm-2 control-label">Departamento</label>
 				<div class="col-sm-4">
 					<input type="text" name="departamento"  class="form-control" id="inputDepartamento"
 						placeholder="Descricao">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputResponsavelDepartamento" class="col-sm-2 control-label">Responsável:</label>
+				<label for="inputResponsavelDepartamento" class="col-sm-2 control-label">Responsável</label>
 				<div class="col-sm-4">
 					<input type="text" name="responsavelDepartamento"  class="form-control" id="inputResponsavelDepartamento"
 						placeholder="Nome do responsável pelo departamento">

@@ -6,7 +6,7 @@
 		<form class="form-horizontal" method="post" action="" role="form">
 			
 			<div class="form-group">
-				<label for="inputTipoVeiculo" class="col-sm-2 control-label">Tipo Veiculo:</label>
+				<label for="inputTipoVeiculo" class="col-sm-2 control-label">Tipo Veiculo</label>
 				<div class="col-sm-4">
 					<input type="text" name="tipoVeiculo"  class="form-control" id="inputTipoVeiculo"
 						placeholder="Descricao">

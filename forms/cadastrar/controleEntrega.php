@@ -37,14 +37,16 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputNomeMotorista" class="col-sm-2 control-label">Nome Motorista</label>
+				<label for="inputNomeMotorista" class="col-sm-2 control-label">Nome
+					Motorista</label>
 				<div class="col-sm-4">
 					<input type="text" name="nomeMotorista" class="form-control"
 						id="inputNomeMotorista" placeholder="Nome do Motorista">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputRGMotorista" class="col-sm-2 control-label">RG Motorista</label>
+				<label for="inputRGMotorista" class="col-sm-2 control-label">RG
+					Motorista</label>
 				<div class="col-sm-4">
 					<input type="text" name="rgMotorista" class="form-control"
 						id="inputRGMotorista" placeholder="RG do Motorista">
@@ -70,9 +72,23 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="inputTransportadora" class="col-sm-2 control-label">Ajudantes </label>
+				<label for="inputTransportadora" class="col-sm-2 control-label">Ajudantes
+				</label>
 				<div class="col-sm-4">
-					<textarea class="form-control" rows="3" placeholder="Digite o nome e o RG de todos os ajudantes"></textarea>
+					<textarea class="form-control" rows="3"
+						placeholder="Digite o nome e o RG de todos os ajudantes"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputTransportadora" class="col-sm-2 control-label">Data
+					Agendada </label>
+				<div class="col-sm-2">
+					<input type="date" class="form-control" id="dataAgendada"
+						name="dataAgendada">
+				</div>
+				<div class="col-sm-2">
+					<input type="time" class="form-control" id="dataAgendada"
+						name="dataAgendada">
 				</div>
 			</div>
 			<div class="form-group">
@@ -93,7 +109,7 @@
 					<textarea class="form-control" rows="3"></textarea>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-1">
 					<button type="submit" class="btn btn-primary">
