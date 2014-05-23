@@ -1,0 +1,3 @@
+
+
+mysqldump -u root -p -e --databases sgp -r c:\Users\marcio.santos\sgp.sql 

@@ -24,6 +24,32 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `sgp` /*!40100 DEFAULT CHARACTER SET la
 USE `sgp`;
 
 --
+-- Table structure for table `tb_cliente`
+--
+
+DROP TABLE IF EXISTS `tb_cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_cliente` (
+  `cli_codigo` int(11) NOT NULL,
+  `cli_sigla` char(2) DEFAULT NULL,
+  `cli_nome` varchar(45) DEFAULT NULL,
+  `cli_descricao` varchar(45) DEFAULT NULL,
+  `cli_inativo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`cli_codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_cliente`
+--
+
+LOCK TABLES `tb_cliente` WRITE;
+/*!40000 ALTER TABLE `tb_cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tb_controle_entrega`
 --
 
@@ -32,7 +58,7 @@ DROP TABLE IF EXISTS `tb_controle_entrega`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tb_controle_entrega` (
   `coe_codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `hos_codigo` int(11) NOT NULL,
+  `cli_codigo` int(11) NOT NULL,
   `coe_descricao_transportadora` varchar(255) NOT NULL,
   `coe_hora_chegada` datetime NOT NULL,
   `dep_codigo` int(11) NOT NULL,
@@ -49,17 +75,17 @@ CREATE TABLE `tb_controle_entrega` (
   `coe_inicio_descarregamento` datetime NOT NULL,
   `coe_fim_descarregamento` datetime NOT NULL,
   PRIMARY KEY (`coe_codigo`),
-  KEY `fk_hospital_idx` (`hos_codigo`),
+  KEY `fk_hospital_idx` (`cli_codigo`),
   KEY `fk_departamento_idx` (`dep_codigo`),
   KEY `fk_coe_dep_idx` (`dep_codigo`),
   KEY `fk_tipo_veiculo_idx` (`tve_codigo`),
   KEY `fk_doca_idx` (`doc_codigo`),
   KEY `fk_usuario_idx` (`usu_codigo`),
-  CONSTRAINT `fk_usuario` FOREIGN KEY (`usu_codigo`) REFERENCES `tb_usuario` (`usu_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cliente_entrega` FOREIGN KEY (`cli_codigo`) REFERENCES `tb_cliente` (`cli_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_coe_dep` FOREIGN KEY (`dep_codigo`) REFERENCES `tb_departamento` (`dep_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_doca` FOREIGN KEY (`doc_codigo`) REFERENCES `tb_doca` (`doc_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_hospital` FOREIGN KEY (`hos_codigo`) REFERENCES `tb_hospital` (`hos_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tipo_veiculo` FOREIGN KEY (`tve_codigo`) REFERENCES `tb_tipo_veiculo` (`tve_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tipo_veiculo` FOREIGN KEY (`tve_codigo`) REFERENCES `tb_tipo_veiculo` (`tve_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_usuario` FOREIGN KEY (`usu_codigo`) REFERENCES `tb_usuario` (`usu_codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -117,32 +143,6 @@ CREATE TABLE `tb_doca` (
 LOCK TABLES `tb_doca` WRITE;
 /*!40000 ALTER TABLE `tb_doca` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tb_doca` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tb_hospital`
---
-
-DROP TABLE IF EXISTS `tb_hospital`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tb_hospital` (
-  `hos_codigo` int(11) NOT NULL,
-  `hos_sigla` char(2) DEFAULT NULL,
-  `hos_nome` varchar(45) DEFAULT NULL,
-  `hos_descricao` varchar(45) DEFAULT NULL,
-  `hos_inativo` char(1) DEFAULT NULL,
-  PRIMARY KEY (`hos_codigo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tb_hospital`
---
-
-LOCK TABLES `tb_hospital` WRITE;
-/*!40000 ALTER TABLE `tb_hospital` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_hospital` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -208,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-29 12:40:10
+-- Dump completed on 2014-05-23 16:49:24
