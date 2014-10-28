@@ -14,6 +14,13 @@
 			</div>
 			
 			<div class="form-group">
+				<label for="" class="col-sm-1 control-label">Descrição</label>
+				<div class="col-sm-4">
+					<textarea class="form-control" name="descricao" rows="3"></textarea>
+				</div>
+			</div>			
+			
+			<div class="form-group">
 				<div class="col-sm-offset-1 col-sm-1">
 					<button type="submit" class="btn btn-primary">
 						<span class="glyphicon glyphicon-floppy-saved"></span> Salvar

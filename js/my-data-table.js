@@ -7,7 +7,7 @@ $(document).ready(function(){
 					},
 				"sLengthMenu": "Mostrar _MENU_ entradas",
 				"sSearch": "Pesquisar: ",
-				"sInfo": "Mostrando _START_ a _END_",
+				"sInfo": "Mostrando _START_ a _END_ de _TOTAL_",
 				"sInfoFiltered": "de _MAX_ resultado(s)",
 				"sZeroRecords": "Resultado nao encontrado",
 				"sInfoEmpty": "Sem resultados"

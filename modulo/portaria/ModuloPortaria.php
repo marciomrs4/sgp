@@ -12,7 +12,7 @@
 					
 					<li class="dropdown">
 						<div class="btn-group">
-							<a href="?action=Cadastrar/Novo" type="button" class="btn btn-primary">
+							<a href="" type="button" class="btn btn-primary">
 								<span class="glyphicon glyphicon-plus"></span> Novo
 							</a>
 						</div>

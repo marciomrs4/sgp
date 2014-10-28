@@ -10,57 +10,46 @@ include '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'componente/menuprinci
 
 include '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'modulo/administracao/ModuloAdministracao.php';
 
-use Respect\Validation;
 
-use system\entity\Portaria;
 use Respect\Validation\Validator as v;
-use Respect\Validation\Exceptions\EmailException;
-use Respect\Validation\Exceptions\StringException;
 
-$Portaria = new Portaria();
-
-print_r($Portaria->setName($_POST)->getName());
-
-
-
-/*
 try {
 
+$validate = new v();	
+$validate->string()
+		 ->email()
+         ->setName('Doca')
+		 ->setTemplate('Estas Regras devem ser seguidas para o campo: {{name}}')
+		 ->assert($_POST["doca"]);			
 
-	v::string()->email()->notEmpty()->alnum()->setName("Doca")->assert($_POST["doca"]);
-	
+$validate2 = new v();
+$validate2->string()
+		  ->notEmpty()
+		 ->setName('Descricao')
+		 ->setTemplate('Estas regras devem ser seguidas no campo: "{{name}}"')
+		 ->assert($_POST['descricao']);
 	
 } catch (Exception $e) {
-	
-	$errors = $e->findMessages(array(
-			'string' => 'Ao tentar inserir {{name}} houve um erro de String',
-			'email'  => 'O valor {{input}} não é um email valido',
+		
+		echo $e->getMainMessage().'<br />';
+		
+		$erros = $e->findMessages(array(
+			'string' => 'Este campo deve conter um Texto {{input}}',
+			'email'  => 'O valor {{name}} não é um email valido',
 			'notEmpty' => 'O valor {{input}} não pode ser vazio',
 			'alnum' => 'o valor {{input}} tem ser alfanumerico'
 	));
-	
-	
-	echo $e->getMainMessage().'<br />';
+		
+		foreach ($erros as $nome){
+			if($nome){
+				echo $nome,'<br />';				
+			}
 
-	echo $errors['string'].'<br />';
-	echo $errors['email'].'<br />';
-	echo $errors['alnum'].'<br />';	
-	echo $errors['notEmpty'];
+		}
 	
-	echo $e->getFullMessage($errors);
-	
-	
-/*	
-	$errors = $e->findMessages(array(
-		'string' => '{{name}} Erro de String',
-		'email'  => '{{name}} Erro de email'
-	));
-	
-	echo $errors['string'];
-	echo $errors['email'];
-	
+
 }
-*/
+
 
 include_once 'forms/cadastrar/doca.php';
 

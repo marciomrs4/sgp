@@ -7,18 +7,10 @@ include '../../componente/menuprincipal.php';
 
 include '../../modulo/portaria/ModuloPortaria.php';
 
-
-$acao = $_GET['action'];
-echo $acao.'.php';
-
-use system\entity\Portaria;
-
-$obj = new Portaria();
-
-echo $obj->setName('Funcionou OK')->getName();
+use system\app\Arquivo;
 
 
-//include_once 'forms/'.$acao.'.php';
+Arquivo::includeForm();
 
 
 include '../../componente/rodape.php';
